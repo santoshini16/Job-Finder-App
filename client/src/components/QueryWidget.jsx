@@ -15,7 +15,7 @@ export const QueryWidget = ({ query, setQuery, handleFetchJobs }) => {
 	};
 
 	return (
-		<div>
+		<div style={{}}>
 			<input
 				type="text"
 				placeholder="Title"

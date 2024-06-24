@@ -1,0 +1,15 @@
+.header {
+    width: 100vw;
+    height: 12vh;
+    background-color:#ED5353;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   border-radius: 0% 0% 3.12rem 2.75rem;
+    margin: 0.1rem;
+}
+.logo{
+    font-size: x-large;
+    font-family: 'DM Sans';
+    margin-left: 4rem;
+}

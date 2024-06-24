@@ -1,7 +1,7 @@
 const Job = require('../model/job');
 
 function getJobById() {
-    return async (req, res) => {
+    return async (req, res, next) => {
         try {
             const jobID = req.params.id;
             const job = await Job.findById(jobID);
@@ -20,14 +20,15 @@ function getJobById() {
 function createNewJob() {
     return async (req, res, next) => {
         try {
-            const { companyName, title, description, logoUrl, salary, location, duration, locationType, information, jobType, skills } = req.body;
+            const { companyName, title, description, logoUrl, jobPosition, salary, location, duration, locationType, information, jobType, skills } = req.body;
+            console.log(req.body);
             const refUserId = req.refUserId;
-            console.log('controller:',refUserId);
             const newJob = new Job({
                 companyName,
                 title,
                 description,
                 logoUrl,
+                jobPosition,
                 salary,
                 location,
                 duration,
@@ -52,20 +53,22 @@ function createNewJob() {
     };
 }
 
-
 function getFilteredJobs() {
     return async (req, res, next) => {
-
         try {
             const { title, skills } = req.query;
             console.log(title, skills);
-            const jobs = await Job.find(
-                {
-                    title: title || { $exists: true },
-                }
-            );
 
-            //Handle this in the mongoose query itself
+            // Convert skills to an array if it's a single string
+            const skillsArray = Array.isArray(skills) ? skills : [skills];
+
+            const query = {
+                title: title || { $exists: true },
+                skills: skills ? { $in: skillsArray } : { $exists: true }
+            };
+
+            const jobs = await Job.find(query);
+
             res.status(200).json({
                 message: 'Job route is working fine',
                 status: 'Working',
@@ -76,6 +79,7 @@ function getFilteredJobs() {
         }
     };
 }
+
 
 function updateExistingJob() {
     return async (req, res) => {

@@ -1,14 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import styles from './Header.module.css';
 // import UserAvatar from "../assets/random_Avatar.jpg";
 
 export const Header = ({ currentUser, setCurrentUser }) => {
 	const navigate = useNavigate();
 
 	return (
-		<div>
-			<h1>Jobfinder</h1>
+		<div className={styles.header}>
+			<h1 className={styles.logo}>Jobfinder</h1>
 			{currentUser && (
-				<div>
+				<div className={styles.logoutContainer}>
 					<button
 						onClick={() => {
 							setCurrentUser(false);
@@ -23,18 +24,18 @@ export const Header = ({ currentUser, setCurrentUser }) => {
 				</div>
 			)}
 			{!currentUser && (
-				<div>
+				<div className={styles.loginContainer}>
 					<button
 						onClick={() => {
 							navigate("/login");
-						}}
+						}} className={styles.loginbtn}
 					>
 						Login
 					</button>
 					<button
 						onClick={() => {
 							navigate("/register");
-						}}
+						}} className={styles.registerbtn}
 					>
 						Register
 					</button>

@@ -17,9 +17,9 @@ export const JobCard = ({ job }) => {
 
 	console.log(job);
 	return (
-		<div>
+		<div style={{position:'absolute',top:'30%',left:'30%'}}>
 			{title}
-			<img src={logoUrl} alt={altJobIcon} />
+			<img src={logoUrl} alt={altJobIcon} style={{width:'20', height:'25'}} />
 			{salary}
 			{location}
 			{duration}
