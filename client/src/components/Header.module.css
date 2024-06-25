@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 .header {
     width: 100vw;
     height: 12vh;
@@ -5,11 +7,50 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-   border-radius: 0% 0% 3.12rem 2.75rem;
-    margin: 0.1rem;
+    border-radius: 0% 0% 3.12rem 2.75rem;
+    
 }
 .logo{
     font-size: x-large;
     font-family: 'DM Sans';
     margin-left: 4rem;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.loginContainer,.logoutContainer{
+    width: 12rem;
+    margin-right: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.logoutContainer{
+   margin-right: 6rem;
+}
+.loginbtn,.registerbtn{
+    width:5.3rem;
+    padding: 0.5rem 0;
+    border-radius: 0.4rem;
+    font-family: 'DM Sans';
+    font-size: medium;
+    font-weight: 500;
+    cursor: pointer;
+}
+.loginbtn{
+    background-color: #ED5353;
+    color: white;
+    border: 2px solid white;
+}
+.registerbtn{
+    border: none;
+    color: #ED5353;
+}
+.logoutbtn,h4{
+    background-color: #ED5353;
+    border: none;
+    font-family: 'DM Sans';
+    font-size: medium;
+    font-weight: 500;
+    color: white;
 }

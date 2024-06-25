@@ -15,7 +15,7 @@ export const Header = ({ currentUser, setCurrentUser }) => {
 							setCurrentUser(false);
 							localStorage.removeItem("token");
 							navigate("/login");
-						}}
+						}} className={styles.logoutbtn}
 					>
 						Logout
 					</button>
