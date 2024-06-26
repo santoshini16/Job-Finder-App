@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+.cardContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 1.5rem;
+    box-shadow: 0px 0px 22px 2px #FF202040;
+}
+
+.logo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.jobDetails {
+    flex: 1;
+    margin-left: 1rem;
+    font-family: 'Roboto';
+}
+
+.jobTitle {
+    font-family: 'Roboto';
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+}
+
+
+.skills {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+.para,.salary,.location{
+    margin-left: 0.5rem;
+}
+.jobType{
+  margin-left: 1rem;
+}
+
+.skill {
+    background: #FCE8E6;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3.92px 0px 0px 0px;
+}
+
+.viewDetailsBtn {
+    background-color: #FF6B6B;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3.92px;
+    cursor: pointer;
+}
+.divOne,.divTwo{
+    display: flex;
+    margin: 0.5rem;
+    font-family: 'Roboto';
+    font-size: medium;
+    font-weight: 500;
+    color: #9c9c9c;
+}
+.divTwo{
+    color: #ED5353;
+}

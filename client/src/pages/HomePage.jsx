@@ -33,11 +33,14 @@ function HomePage({ currentUser, setCurrentUser }) {
     return (
         <div className={styles.body}>
             <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
+            <div className={styles.queryWidget}>
             <QueryWidget
                 query={query}
                 setQuery={setQuery}
                 handleFetchJobs={handleFetchJobs}
             />
+            </div>
+            <div className={styles.jobCard}>
             {jobs.length > 0 ? (
                 jobs.map((job, index) => (
                     <JobCard job={job} key={index} />
@@ -45,6 +48,7 @@ function HomePage({ currentUser, setCurrentUser }) {
             ) : (
                 <p>No jobs found</p>
             )}
+            </div>
         </div>
     );
 }
